@@ -36,8 +36,7 @@
     <div class="thumbnail">
       <div class="caption">
         <h3>${com.commodityName}</h3>
-        <p><img  alt="六安瓜片" src="${com.commodityImage}" width="120" height="90"></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <p><img  alt="六安瓜片" src="${com.commodityImage}" width="220" height="150"></ps>
       </div>
     </div>
   </div>
