@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	 http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	 http://www.springframework.org/schema/util
+	 http://www.springframework.org/schema/util/spring-util-3.1.xsd
+	 http://www.springframework.org/schema/tx
+	 http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	 ">
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.cosyit"></context:component-scan>
+
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl"
+			value="jdbc:mysql://localhost:3306/liuyichadao?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf8">
+		</property>
+		<property name="user" value="root"></property>
+		<property name="password" value="root"></property>
+		<property name="maxPoolSize" value="200"></property>
+		<property name="minPoolSize" value="50"></property>
+		<property name="maxIdleTime" value="2000"></property>
+		<property name="initialPoolSize" value="100"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>
+					com/cosyit/entity/AdvertisementInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/CommodityTypeInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/AgencyInfo.hbm.xml</value>
+				<value>
+					com/cosyit/entity/CommodityThemeInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/UserInfo.hbm.xml</value>
+				<value>com/cosyit/entity/AreaInfo.hbm.xml</value>
+				<value>com/cosyit/entity/UserTypeInfo.hbm.xml</value>
+				<value>
+					com/cosyit/entity/UserCommentOnCommodityInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/SearchKeywordInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/CommodityCollectionInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/CommodityInfo.hbm.xml</value>
+				<value>com/cosyit/entity/OrderList.hbm.xml</value>
+				<value>com/cosyit/entity/OrderInfo.hbm.xml</value>
+				<value>
+					com/cosyit/entity/CommodityBuoyInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/CommodityImageInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/ThemeInfo.hbm.xml</value>
+				<value>
+					com/cosyit/entity/CommodityPriceChangeRecordInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/CommodityPriceInfoInfo.hbm.xml
+				</value></list>
+		</property></bean>
+		
+				<!--这个也可以看做是一个bean, 这里的所有bean，会随着spring的创建而实例化。将来会有很多的dao，都会放到这里来。在这里面直接创建即可。 -->
+	<util:map id="daoMap" map-class="java.util.HashMap">
+		<entry key="commodityInfoDao" value-ref="commodityInfoDao"></entry>
+<!-- 		<entry key="subjectinfoDAO" value-ref="subjectinfoDAO"></entry>
+		<entry key="studentDAO" value-ref="studentDAO"></entry>
+		<entry key="studentCardDAO" value-ref="studentCardDAO"></entry>
+		<entry key="studentAndSubjectDAO" value-ref="classInfoDAO"></entry>
+		<entry key="classInfoDAO" value-ref="classInfoDAO"></entry> -->
+	</util:map>
+		
+		</beans>
