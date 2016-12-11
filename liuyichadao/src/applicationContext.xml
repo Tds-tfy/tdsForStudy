@@ -21,25 +21,29 @@
 		class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/liuyichadao?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf8">
+			value="jdbc:mysql://rdsdgru9oenrm508jl98.mysql.rds.aliyuncs.com:3306/rcvw67459q">
 		</property>
-		<property name="user" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="user" value="rcvw67459q"></property>
+		<property name="password" value="Tan95826"></property>
 		<property name="maxPoolSize" value="200"></property>
 		<property name="minPoolSize" value="50"></property>
 		<property name="maxIdleTime" value="2000"></property>
 		<property name="initialPoolSize" value="100"></property>
+<!-- 	<property name="provider_class" value="org.hibernate.c3p0.internal.C3P0ConnectionProvider"></property> -->
+		
 	</bean>
 	
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		
+		
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">
-					org.hibernate.dialect.MySQLDialect
+					org.hibernate.dialect.MySQL5Dialect
 				</prop>
 			</props>
 		</property>
