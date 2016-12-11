@@ -17,7 +17,7 @@ public interface Dao<T> {
 	 *根据业务的需要，进行多条件查询并实现分页查询
 	 * @param pageNum 需要查询的页码（第几页）
 	 * @param rowCount	指定每页显示的行数
-	 * @param criterions 1-n个 条件准则
+	 * @param criterions 1和或者多个个 条件准则
 	 * @return
 	 */
 	List<T> getInfoesByProperties(Integer pageNum,Integer rowCount,Criterion...criterions);

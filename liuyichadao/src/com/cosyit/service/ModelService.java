@@ -31,7 +31,7 @@ public class ModelService {
 	 * 全局常量，声明全局常量后所有的对象共享此属性。再不知道某个类要产生多少个对象时，
 	 * 如果想改属性，只要一个对象改了，其他对象也改了，往往用类直接调用 
 	 */
-	public static final String COMMODITY="commodityInfoDao";
+	public static final String COMMODITY="teaCommodityInfoDao";
 	
 	
 	@Resource(name="daoMap")
@@ -83,6 +83,8 @@ public class ModelService {
 	public List getInfoByProperties(String key,Criterion...criterions){
 		return this.getDaoMap().get(key).getInfoesByProperties(criterions);
 	}
+
+	
 
 	/**
 	 * 

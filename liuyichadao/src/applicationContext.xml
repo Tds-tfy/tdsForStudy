@@ -45,54 +45,53 @@
 		</property>
 		<property name="mappingResources">
 			<list>
+
 				<value>
-					com/cosyit/entity/AdvertisementInfo.hbm.xml
+					com/cosyit/entity/TeaUserCommentOnCommodityInfo.hbm.xml
 				</value>
 				<value>
-					com/cosyit/entity/CommodityTypeInfo.hbm.xml
+					com/cosyit/entity/TeaCommodityInfo.hbm.xml
 				</value>
-				<value>com/cosyit/entity/AgencyInfo.hbm.xml</value>
+				<value>com/cosyit/entity/TeaUserInfo.hbm.xml</value>
+				<value>com/cosyit/entity/TeaUserTypeInfo.hbm.xml</value>
 				<value>
-					com/cosyit/entity/CommodityThemeInfo.hbm.xml
+					com/cosyit/entity/TeaCommodityThemeInfo.hbm.xml
 				</value>
-				<value>com/cosyit/entity/UserInfo.hbm.xml</value>
-				<value>com/cosyit/entity/AreaInfo.hbm.xml</value>
-				<value>com/cosyit/entity/UserTypeInfo.hbm.xml</value>
+				<value>com/cosyit/entity/TeaAreaInfo.hbm.xml</value>
+				<value>com/cosyit/entity/TeaOrderList.hbm.xml</value>
 				<value>
-					com/cosyit/entity/UserCommentOnCommodityInfo.hbm.xml
-				</value>
-				<value>
-					com/cosyit/entity/SearchKeywordInfo.hbm.xml
+					com/cosyit/entity/TeaCommodityBuoyInfo.hbm.xml
 				</value>
 				<value>
-					com/cosyit/entity/CommodityCollectionInfo.hbm.xml
-				</value>
-				<value>com/cosyit/entity/CommodityInfo.hbm.xml</value>
-				<value>com/cosyit/entity/OrderList.hbm.xml</value>
-				<value>com/cosyit/entity/OrderInfo.hbm.xml</value>
-				<value>
-					com/cosyit/entity/CommodityBuoyInfo.hbm.xml
+					com/cosyit/entity/TeaCommodityPriceInfoInfo.hbm.xml
 				</value>
 				<value>
-					com/cosyit/entity/CommodityImageInfo.hbm.xml
+					com/cosyit/entity/TeaCommodityTypeInfo.hbm.xml
 				</value>
-				<value>com/cosyit/entity/ThemeInfo.hbm.xml</value>
+				<value>com/cosyit/entity/TeaThemeInfo.hbm.xml</value>
 				<value>
-					com/cosyit/entity/CommodityPriceChangeRecordInfo.hbm.xml
+					com/cosyit/entity/TeaAdvertisementInfo.hbm.xml
 				</value>
 				<value>
-					com/cosyit/entity/CommodityPriceInfoInfo.hbm.xml
-				</value></list>
+					com/cosyit/entity/TeaSearchKeywordInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/TeaCommodityImageInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/TeaOrderInfo.hbm.xml</value>
+				<value>
+					com/cosyit/entity/TeaCommodityCollectionInfo.hbm.xml
+				</value>
+				<value>
+					com/cosyit/entity/TeaCommodityPriceChangeRecordInfo.hbm.xml
+				</value>
+				<value>com/cosyit/entity/TeaAgencyInfo.hbm.xml</value></list>
 		</property></bean>
 		
 				<!--这个也可以看做是一个bean, 这里的所有bean，会随着spring的创建而实例化。将来会有很多的dao，都会放到这里来。在这里面直接创建即可。 -->
 	<util:map id="daoMap" map-class="java.util.HashMap">
-		<entry key="commodityInfoDao" value-ref="commodityInfoDao"></entry>
-<!-- 		<entry key="subjectinfoDAO" value-ref="subjectinfoDAO"></entry>
-		<entry key="studentDAO" value-ref="studentDAO"></entry>
-		<entry key="studentCardDAO" value-ref="studentCardDAO"></entry>
-		<entry key="studentAndSubjectDAO" value-ref="classInfoDAO"></entry>
-		<entry key="classInfoDAO" value-ref="classInfoDAO"></entry> -->
+		<entry key="teaCommodityInfoDao" value-ref="teaCommodityInfoDao"></entry>
+
 	</util:map>
 		
 		</beans>

@@ -2,12 +2,10 @@ package com.cosyit.test;
 
 import java.util.List;
 
-import org.jboss.cache.commands.tx.CommitCommand;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cosyit.dao.interfaces.Dao;
-import com.cosyit.entity.CommodityInfo;
+import com.cosyit.entity.TeaCommodityInfo;
 import com.cosyit.service.ModelService;
 
 public class Test {
@@ -16,8 +14,8 @@ public class Test {
 		// TODO Auto-generated method stub
 		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
 		ModelService service=(ModelService) applicationContext.getBean("modelService");
-		List<CommodityInfo> al=service.getInfoByProperties(ModelService.COMMODITY, 1, 3) ;
-		for (CommodityInfo commodityInfo : al) {
+		List<TeaCommodityInfo> al=service.getInfoByProperties(ModelService.COMMODITY, 1, 3) ;
+		for (TeaCommodityInfo commodityInfo : al) {
 			System.out.println(commodityInfo.getCommodityName());
 		}
 		

@@ -33,8 +33,11 @@
 		<h2>cosyIT组织成员的你， 欢迎您进入全栈工程师的强者之路!</h2>
 		<p></p>
 		<p>
-			<a href="/liuyichadao/lycd/crol/commodityaction/getinfo">开始数据库测试</a>
+			<a href="/liuyichadao/lycd/crol/TeaCommodityaction/getinfo">开始数据库测试</a>
 		</p>
+			<p>
+			<a href="/liuyichadao/tea1.jsp">子页之-tea1页面</a>
+		</p>	
 	</div>
 
 </body>
